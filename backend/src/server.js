@@ -13,6 +13,9 @@ const PORT = process.env.PORT || 5001
 // Database
 connectDB();
 
+// Middleware (before routes)
+app.use(express.json());
+
 // Whenever request starts with 1st arg, use router defined in 2nd arg
 app.use("/api/notes", notesRoutes);
 
